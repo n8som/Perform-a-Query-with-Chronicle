@@ -14,7 +14,7 @@ I am a security analyst at a financial services company. I receive an alert that
 
 On the Chronicle home page, I’ll find the current date and time, a search bar, and details about the total number of log entries. There are already a significant number of log events ingested into the Chronicle instance.
 
-[]
+![image](https://github.com/n8som/Perform-a-Query-with-Chronicle/assets/110139109/ab50f00d-9efb-4f8d-9168-c9e4680b147b)
 
 <h2>Task 2: Perform a Domain Search</h2>
 
@@ -26,7 +26,7 @@ To begin, complete these steps to perform a domain search for the domain contain
 
 <h2>Task 3: Evaluate the Search Results</h2>
 
-[]
+![image](https://github.com/n8som/Perform-a-Query-with-Chronicle/assets/110139109/e64e87e0-39ec-420e-af9d-931063e8d38b)
 
 After performing a domain search, I'll be in the domain view. Evaluate the search results and observe the following:
 
@@ -52,13 +52,13 @@ Now that I've retrieved results for the domain name, the next step is to determi
 
 1. Click on VT CONTEXT to analyze the available VirusTotal information about this domain. There is no VirusTotal information about this domain. To exit the VT CONTEXT window, click the X.
 
-2. By Top Private Domain, click office365x24.com to access the domain view for office365x24.com. Click VT CONTEXT to assess the VirusTotal information about this domain. In the pop up, I can observe that one vendor has flagged this domain as malicious. Exit the VT CONTEXT window. Click the back button in my browser to go back to the domain view for the signin.office365x24.com search.
+2. By Top Private Domain, click office365x24.com to access the domain view for office365x24.com. Click VT CONTEXT to assess the VirusTotal information about this domain. In the pop-up, I can observe that one vendor has flagged this domain as malicious. Exit the VT CONTEXT window. Click the back button in my browser to go back to the domain view for the signin.office365x24.com search.
 
 3. Click on the ET INTELLIGENCE REP LIST insight card to expand it, if needed. Take note of the category.
 
 <h2>Task 5: Investigate the Affected Assets and Events</h2>
 
-Information about the events and assets relating to the domain are separated into two tabs: TIMELINE and ASSETS. TIMELINE shows the timeline of events that includes when each asset accessed the domain. ASSETS list hostnames, IP addresses, MAC addresses, or devices that have accessed the domain.
+Information about the events and assets relating to the domain are separated into two tabs: TIMELINE and ASSETS. TIMELINE shows the timeline of events that includes when each asset accessed the domain. ASSETS lists hostnames, IP addresses, MAC addresses, or devices that have accessed the domain.
 
 Investigate the affected assets and events by exploring the tabs:
 
@@ -66,7 +66,7 @@ Investigate the affected assets and events by exploring the tabs:
 
 2. TIMELINE: Click EXPAND ALL to reveal the details about the HTTP requests made, including GET and POST requests. The POST information is especially useful because it means that data was sent to the domain. It also suggests a possible successful phish. Using my incident handler's journal, take note of the POST requests to the /login.php page. For more details about the connections, open the raw log viewer by clicking the open icon.
 
-[]
+![image](https://github.com/n8som/Perform-a-Query-with-Chronicle/assets/110139109/91d87bb4-74d8-430f-8762-4157ae784d41)
 
 <h2> Task 6: Investigate the Resolved IP address</h2>
 
@@ -84,29 +84,29 @@ Investigate the IP address found under the RESOLVED IPS insight card to identify
   - ASSETS: Take note of the additional affected assets.
   - DOMAINS: Take note of the additional domains associated with this IP address.
 
-According to the available ET Intelligence Rep List, signin.office365x24.com is categorized as []
+According to the available ET Intelligence Rep List, signin.office365x24.com is categorized as a drop site for logs or stolen credentials:
 
-[]
+![image](https://github.com/n8som/Perform-a-Query-with-Chronicle/assets/110139109/53ab5198-bc58-401f-be67-b4ee840323a0)
 
-[] accessed the signin.office365x24.com domain:
+These are the assets that accessed the signin.office365x24.com domain:
 
-[]
+![image](https://github.com/n8som/Perform-a-Query-with-Chronicle/assets/110139109/65a358ec-1ef1-4ae6-893b-e581bf343878)
 
-The IP address, [], resolves to the signin.office365x24.com domain:
+These IP addresses resolves to the signin.office365x24.com domain:
 
-[]
+![image](https://github.com/n8som/Perform-a-Query-with-Chronicle/assets/110139109/39fafe11-2c7a-4078-ab1e-ffb345797497)
 
-[] POST requests were made to the signin.office365x24.com domain:
+3 POST requests were made to the signin.office365x24.com domain:
 
-[]
+![image](https://github.com/n8som/Perform-a-Query-with-Chronicle/assets/110139109/cc0c5b7b-6b77-4460-be40-d81b09f45bb9)
 
-[] is the target URL of the web page that the POST requests were made to: 
+"http://signin.office365x24.com/login.php" is the target URL of the web page that the POST requests were made to: 
 
-[]
+![image](https://github.com/n8som/Perform-a-Query-with-Chronicle/assets/110139109/d942c1f6-92d6-46df-a6dc-36138f7df9fe)
 
-[] are the domains the IP address 40.100.174.34 resolves to:
+These are the domains the IP address 40.100.174.34 resolves to:
 
-[]
+![image](https://github.com/n8som/Perform-a-Query-with-Chronicle/assets/110139109/d0befa51-4fc0-4a83-98ea-08385c1381df)
 
 <h2>Conclusions</h2>
 
